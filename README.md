@@ -7,11 +7,11 @@ File configuration with help config.php
 
 ```sh
 <?php
-	$UserAdmin = 'serveradmin';
-	$PWQuery   = 'passwordquery';
-	$IP_TS     = 'ip';
-	$PuertoTS  = '9987'; //default
-	$PuertoQuery = '10011'; //default
+	$username = 'serveradmin';
+	$password   = 'passwordquery';
+	$IP     = 'ip';
+	$Port-TS  = '9987'; //default
+	$Port-Query = '10011'; //default
 ?>
 ```
 Easy install and setting. Port default Query 10011.
