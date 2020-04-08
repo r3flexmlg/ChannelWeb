@@ -16,7 +16,11 @@
 		<link href="css/checkbox/orange.html" rel="stylesheet">
 		<link href="css/preview.css" rel="stylesheet">
 		<link href="css/authenty.css" rel="stylesheet">
-	
+		<link href="css/notify.css" rel="stylesheet">
+
+		<!-- Alertify css -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
 		<!-- Font Awesome CDN -->
 		<link href="netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		
@@ -33,105 +37,105 @@
   <style type="text/css"></style></head>
   <body style="">
 		
-		<section id="authenty_preview" style="height: 512px;">
-			<section id="signin_main" class="authenty signin-main" style="height: 512px;">
-				<div class="section-content">
-				  <div class="wrap">
-					  <div class="container">	  
-							<div class="form-wrap">
-								<div class="row">
-									<div id="form_1" data-animation="bounceIn" class="animated bounceIn">
-										<div class="form-header">
-										  <i class="fa fa-user"></i>
-                                            									  </div>
-									  <div class="form-main">
-										  <form method="post" action="crear.php">
-											  <div class="form-group"> 
-									  			<input type="text" name="name" class="form-control" placeholder="Numele canalului" required="required" pattern="[a-zA-Z]{4,22}" title="Numele trebuie sa aiba intre 4 si 22 caractere, sa nu includa simboluri sau cifre." value="">
-											    <input type="text" name="subname" class="form-control" placeholder="Numele sub-canalului" required="required" pattern="[a-zA-Z]{4,22}" title="Trebuie să deții obligatoriu un subcanal pentru al gestiona.Numele trebuie sa aiba intre 4 si 22 caractere, sa nu includa simboluri sau cifre." value="">
-												<input type="text" name="ChannelPass" class="form-control" placeholder="Parola canalului" required="required" pattern="{4,22}" title="Parola canalului trebuie sa contina minimum 4 charactere." value="">
-												<input type="text" name="idts" class="form-control" placeholder="UniqueID-ul tau" required="required" title="UniqueID-ul trebuie sa contina un minimum de 27-28 charactere." pattern="{25,50}" value="">								
-											  </div>
-										    <button id="signIn_1" type="submit" class="btn btn-block signin">Create your channel</button>
-										  </form>	
-									  </div>
-										<div class="form-footer">
-											<div class="row">
-												<div class="col-xs-7">
-													<i class="fa fa-unlock-alt"></i>
-													<a href="#UniqueID" id="HowToUniqueID">Gaseste UniqueID!</a>
-												</div>
-												<div class="col-xs-5">
-													<i class="fa fa-check"></i>
-													<a href="#ListaCanale" id="CreatedChannels">Channels</a>
-												</div>
+	<section id="authenty_preview" style="height: 512px;">
+		<section id="signin_main" class="authenty signin-main" style="height: 512px;">
+			<div class="section-content">
+				<div class="wrap">
+					<div class="container">	  
+						<div class="form-wrap">
+							<div class="row">
+								<div id="form_1" data-animation="bounceIn" class="animated bounceIn">
+									<div class="form-header">
+										<i class="fa fa-user"></i>
+																				</div>
+									<div class="form-main">
+										<form method="post" action="crear.php">
+											<div class="form-group"> 
+											<input type="text" name="name" class="form-control" placeholder="Channel name" required="required" pattern="[a-zA-Z0-9\s]{4,22}" title="The name must be between 4 and 22 characters, not include symbols." value="">
+											<input type="text" name="subname" class="form-control" placeholder="Sub-channel name" pattern="[a-zA-Z0-9\s]{4,22}" title="The name must be between 4 and 22 characters, not include symbols." value="">
+											<input type="text" name="ChannelPass" class="form-control" placeholder="Channel password" pattern="{4,22}" title="The channel password must contain at least 4 characters." value="">
+											<input id="uid_input" type="text" name="uid" class="form-control" placeholder="Your UniqueID" required="required" title="Unique UID must be between 25 and 50 characters." pattern="{25,50}" value="">								
 											</div>
-										</div>		
-								  </div>
+										<button id="signIn_1" type="submit" class="btn btn-block signin">Create your channel</button>
+										</form>	
+									</div>
+									<div class="form-footer">
+										<div class="row">
+											<div class="col-xs-7">
+												<i class="fa fa-unlock-alt"></i>
+												<a href="#UniqueID" id="HowToUniqueID">Find UniqueID!</a>
+											</div>
+											<div class="col-xs-5">
+												<i class="fa fa-check"></i>
+												<a href="#ListaCanale" id="CreatedChannels">Channels</a>
+											</div>
+										</div>
+									</div>		
 								</div>
-							</div>
-					  </div>
-				  </div>
-				</div>
-			</section>
-
-            <section id="UniqueID" class="authenty signin-alt">
-				<div class="section-content">
-				  <div class="wrap">
-					  <div class="container">
-							<div class="title" data-animation="fadeInUp">
-                                <center>
-                                    <p>Cum aflu UniqueID-ul meu?</p>
-                                    <iframe width="853" height="480" src="https://www.youtube.com/embed/rutteRHoag0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                                </center>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<section id="UniqueID" class="authenty signin-alt">
+			<div class="section-content">
+				<div class="wrap">
+					<div class="container">
+						<div class="title" data-animation="fadeInUp">
+							<center>
+								<p>How do I find my UniqueID?</p>
+								<iframe width="853" height="480" src="https://www.youtube.com/embed/rutteRHoag0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+				<section id="ListaCanale" class="authenty password-recovery">
+					<div class="section-content">
+						<div class="wrap">
+							<div class="container">
+								<div class="form-wrap">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 brand" data-animation="fadeInUp">
+											<h2>EvD Security</h2>
+											<p>Rules & Requirements</p>
+										</div>
+										<div class="col-sm-1 hidden-xs">
+											<div class="horizontal-divider"></div>
+										</div>
+										<div class="col-xs-12 col-sm-8 main" data-animation="fadeInLeft" data-animation-delay=".5s">
+
+											<table class="table table-bordered">
+													<tr class="danger">
+													<th>Requirements and Rules for using the platform</th>
+													</tr>
+								</table>
+											<p>
+												Requirements :<br/>
+												1.The platform can only be used by those who hold the Bronze level Trusted degree.<br/>
+												2.Unless you previously owned a channel you will now be able to use the platform.<br/>
+												Rules :<br/>
+												1.Channels that do not have activity for up to 5 business days will be automatically deleted.<br/>
+												2.Channel names will not contain obscene words or signs ($% ^ && -_ /?), Will be deleted or not accepted by the system.<br/>
+												3.Only one channel is accepted on UniQID with the Bronze degree.<br/>
+												4.Those who like spam, we are sorry, the Bronze degree will be granted by the server only when active for 30 minutes on the server.<br/><br/>
+												Active platform from: 09.03.2016 Forked by R3flex 07/April/2020<br/>
+												<br/>
+										</p>
+
+										</div>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
 			</section>
-
-      			    <section id="ListaCanale" class="authenty password-recovery">
-				        <div class="section-content">
-					        <div class="wrap">
-						        <div class="container">
-							        <div class="form-wrap">
-								        <div class="row">
-									        <div class="col-xs-12 col-sm-3 brand" data-animation="fadeInUp">
-										        <h2>EvD Security</h2>
-										        <p>Reguli & Cerințe</p>
-									        </div>
-									        <div class="col-sm-1 hidden-xs">
-										        <div class="horizontal-divider"></div>
-									        </div>
-									        <div class="col-xs-12 col-sm-8 main" data-animation="fadeInLeft" data-animation-delay=".5s">
-
-                                                <table class="table table-bordered">
-                                                      <tr class="danger">
-                                                        <th>Cerințe și Reguli pentru folosirea platformei</th>
-                                                      </tr>
-                                  </table>
-                                                <p>
-													Cerințe :<br/>
-													1.Platforma poate fi folosită doar de cei ce dețin gradul Trusted nivel Bronze.<br/>
-													2.Doar dacă nu ați deținu un canal în precedent veți putea folosi acum platforma.<br/>
-													Reguli :<br/>
-													1.Canalele ce nu prezintă activitate cel mult 5 zile lucrătoare vor fi șterse automat.<br/>
-													2.Numele canalelor nu vor conține cuvinte obscene sau semne ($%^&&-_/?) , vor fi șterse sau neacceptate de sistem.<br/>
-													3.Se acceptă doar un singur canal pe UniQID însoțit de gradul Bronze.<br/>
-													4.Cei ce simpatizează spam-ul , ne pare rău , gradul de Bronze va fi acordat de către server doar la prezența activă timp de 30 de minute pe server.<br/><br/>
-                                                    Platformă activă din: 09.03.2016 <br/>
-                                                    Canale create în medie/zi: 16 <br/>
-                                            </p>
-
-									        </div>
-								        </div>
-									
-							        </div>
-						        </div>
-					        </div>
-				        </div>
-			    </section>
-	</section>
+</section>
 
 	  
     <!-- js library -->
@@ -141,6 +145,9 @@
 		<script src="js/jquery.icheck.min.js"></script>
 		<script src="js/waypoints.min.js"></script>
 		
+		<!-- Alertify js -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
 		<!-- authenty js -->
 		<script src="js/authenty.js"></script>
 		
@@ -214,6 +221,34 @@
 	      });
 			
 			})(jQuery);
+		
+		// API Call
+		var url = 'http://192.168.233.187/channel_web/ts3_api.php';
+		fetch(url, {
+			method: 'post', // *GET, POST, PUT, DELETE, etc.
+			headers: {
+			"Content-Type": "application/json"
+			},
+			body: JSON.stringify({ 
+				"function": 'Get_UID'
+			})
+  		})
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			let entries = Object.values(data);
+			var uid = entries[0].client_unique_identifier;
+			// If no matching clients were found.
+			if (!uid) return;
+			var uid_input = document.getElementById("uid_input"); 
+			uid_input.value = uid;
+			alertify.set('notifier','position', 'top-center');
+			alertify.notify('Successfully retrieved client UID!', 'notify_retrieved_uid', 3);
+		}).catch(function (err) {
+			console.log(err);
+		})
+		
 		</script>
   	</body>
 </html>
