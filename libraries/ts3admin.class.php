@@ -4699,7 +4699,8 @@ class ts3admin {
 		}
 		else
 		{
-			if(strpos(fgets($socket), 'TS3') !== false)
+      $prefix = fgets($socket);
+      if(strpos($prefix, 'TS3') !== false || strpos($prefix, 'TeaSpeak') !== false)
 			{
 				$tmpVar = fgets($socket);
 				$this->runtime['socket'] = $socket;

@@ -238,6 +238,7 @@
 		})
 		.then(function (data) {
 			let entries = Object.values(data);
+			console.log(entries);
 			var uid = entries[0].client_unique_identifier;
 			// If no matching clients were found.
 			if (!uid) return;

@@ -28,6 +28,17 @@ if ($online === false) {
 	exit();
 }
 
+// Channel group must exist!
+$channel_groups = $ts3_VirtualServer->channelGroupList();
+$ch_admin_exists = false;
+foreach($channel_groups as $element) {
+	//if ($value['cgid']->toString() == $client_uid) $online = true;
+	if ($element["cgid"] == $channel_admin_id) $ch_admin_exists = true;
+}
+if ($ch_admin_exists === false) {
+	echo "Channel admin group doesn't exist! Check your config file!";
+	exit();
+}
 // List all clients containing specified channel group.
 $client_list = $ts3_VirtualServer->channelGroupClientList($channel_admin_id);
 $clID = $ts3_VirtualServer->clientGetByUid($client_uid);
