@@ -223,7 +223,7 @@
 			})(jQuery);
 		
 		// API Call
-		var url = 'http://192.168.233.187/channel_web/ts3_api.php';
+		var url = 'ts3_api.php';
 		fetch(url, {
 			method: 'post', // *GET, POST, PUT, DELETE, etc.
 			headers: {
